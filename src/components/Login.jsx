@@ -19,6 +19,7 @@ const Login = () => {
             (response)=>{
                 console.log(response.data)
                 if (response.data.status == "success") {
+                    sessionStorage.setItem("userId",response.data.userdata._id)
                     navigate("/add")
                     setInput(
                         {
